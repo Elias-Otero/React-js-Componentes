@@ -1,20 +1,26 @@
 import { useState } from "react";
 
 const ItemCount = () => {
-    const [objects, setRate] = useState(0); //hook
+    const [objects, setObjects] = useState(0); //hook
     
 
     const take = () => {
-    setRate*(objects+1);
+    setObjects(objects-1);
 }
+
+    const put = () => {
+        setObjects(objects+1);
+    }
 
 
     return (
-    <>
-
-        <Button onClick={take}>-</Button> {objects} Productos <Button onClick={put}>+</Button>
-    
-    </>
+    <div>
+        
+        <button onClick={take}>-</button> 
+            {objects} Productos 
+        <button onClick={put}>+</button>
+        <button>Agregar al Carrito</button>
+    </div>
   );
 }
 
